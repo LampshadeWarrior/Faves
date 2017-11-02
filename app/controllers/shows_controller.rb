@@ -3,9 +3,15 @@ class ShowsController < ApplicationController
   end
 
   def create
-    @show = Show.new
-    Show.create(show_params)
-    redirect_to root_path
+    @show = Show.create(show_params)
+    if @show.invalid?
+      flash[:error] = '<strong>Could not save</strong> the data you entered is invalid.'
+    end
+    redirect_to show_path(show)
+  end
+
+  def show
+    @show = Show.order("RANDOM()").first
   end
 
   private

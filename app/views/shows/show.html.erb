@@ -1,0 +1,13 @@
+<div class="show_display_box">
+<h1>Thanks for the submission!</h1>
+<h2>Here are some other people's faves!</h2><br />
+<h3><%= @show.name %></h3>
+<h4><i><%= @show.person %></i></h4>
+<p>-<%= @show.city %></p><br />
+
+<%= link_to 'Another?', show_path %><br />
+
+<br />
+
+<%= link_to 'Back to Home', root_path %>
+</div>
