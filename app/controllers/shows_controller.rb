@@ -2,12 +2,13 @@ class ShowsController < ApplicationController
   def index
   end
 
-  def create
-    @show = Show.create(show_params)
-    if @show.invalid?
-      flash[:error] = '<strong>Could not save</strong> the data you entered is invalid.'
+def create
+  @show = current_user.shows.create(show_params)
+    if @show.valid?
+      redirect_to root_path
+    else
+      render :new, status: :unprocessable_entity
     end
-    redirect_to show_path(show)
   end
 
   def show

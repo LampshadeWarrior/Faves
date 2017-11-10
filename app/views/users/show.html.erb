@@ -1,0 +1,24 @@
+<div class="show_display_box">
+  <div class="row">
+    <div class="col-4">
+      <%= image_tag 'user.png' %>
+    </div>
+
+    <div class="col-8">
+      <h1><%= @user.email %></h1>
+      <h3>Member Since: <%= @user.created_at.strftime("%B %d, %Y") %></h3>
+    </div>
+  </div class="clear"></div>
+  <br /><br />
+    
+  <h2 class="text-center">My Faves</h2>
+<br /><br />
+
+<% @user.shows.each do |show| %>
+  <div class="show_display_box col-10 offset-1">
+      <h1><%= link_to show.name, show_path(show) %></h1>
+
+    <% end %>
+  </div>
+
+  
