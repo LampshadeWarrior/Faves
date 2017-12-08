@@ -31,3 +31,8 @@
       </div>
     </div>
   </div>
+<% @shows.sort.each do |show| %>
+  <div>
+    <%= link_to show.name, show_path(show) %>
+  </div>
+<% end %>

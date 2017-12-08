@@ -1,9 +1,12 @@
 class ShowsController < ApplicationController
   def index
+    @shows = Show.all
+        # @shows = Show.select(:name).map(&:name).uniq
+
   end
  
-def create
-  @show = current_user.shows.create(show_params)
+  def create
+    @show = current_user.shows.create(show_params)
     if @show.valid?
       redirect_to root_path
     else
