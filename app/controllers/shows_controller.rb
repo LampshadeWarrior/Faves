@@ -1,7 +1,7 @@
 class ShowsController < ApplicationController
   def index
   end
-
+ 
 def create
   @show = current_user.shows.create(show_params)
     if @show.valid?
