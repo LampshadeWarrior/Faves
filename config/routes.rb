@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :shows
 
-  root 'shows#index'
+  root 'static_pages#index'
 
   resources :users, only: [:show]
 

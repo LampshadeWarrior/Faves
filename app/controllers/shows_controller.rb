@@ -1,4 +1,6 @@
 class ShowsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @shows = Show.all
         # @shows = Show.select(:name).map(&:name).uniq
@@ -21,6 +23,6 @@ class ShowsController < ApplicationController
   private
 
   def show_params
-    params.require(:show).permit(:name, :person, :city)
+    params.require(:show).permit(:title)
   end
 end
