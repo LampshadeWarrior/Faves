@@ -10,12 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20171210140544) do
-=======
 ActiveRecord::Schema.define(version: 20171222183704) do
->>>>>>> add-reviews
-
+    
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -34,11 +30,8 @@ ActiveRecord::Schema.define(version: 20171222183704) do
     t.datetime "updated_at", null: false
     t.integer  "user_id"
     t.string   "title"
-<<<<<<< HEAD
-=======
     t.integer  "show_id"
     t.index ["show_id"], name: "index_shows_on_show_id", using: :btree
->>>>>>> add-reviews
     t.index ["user_id"], name: "index_shows_on_user_id", using: :btree
   end
 
