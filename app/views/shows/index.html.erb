@@ -8,7 +8,8 @@
 
   <% @shows.sort.each do |show| %>
     <div>
-      <%= link_to('Fave this show!', vote_for_show_shows_path(@show), :remote => true) %> <%= link_to show.title, show_path(show) %>
+      <%= link_to('Fave this show!', vote_for_show_path(show)) %> 
+      <%= link_to show.title, show_path(show) %>
     </div>
   <% end %>
 </div>
