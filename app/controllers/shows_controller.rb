@@ -17,7 +17,7 @@ class ShowsController < ApplicationController
   end
 
   def show
-    @show = Show.order("RANDOM()").first
+    @show = Show.find(params[:id])
   end
 
   private

@@ -1,5 +1,9 @@
-<% @shows.sort.each do |show| %>
-  <div>
-    <%= link_to show.title, show_path(show) %>
-  </div>
-<% end %>
+<div class="show_display_box">
+  <h1>Pick Your favorite!</h1>
+
+  <% @shows.sort.each do |show| %>
+    <div>
+      <%= link_to show.title, show_path(show) %>
+    </div>
+  <% end %>
+</div>

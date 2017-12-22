@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'new_review', to: 'reviews#new'
+
+  post 'reviews', to: 'reviews#create'
+
   devise_for :users
   get 'shows/index'
 
