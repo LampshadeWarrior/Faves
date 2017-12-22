@@ -21,12 +21,10 @@ class ShowsController < ApplicationController
   end
 
   def vote_for_show
+    @show - Show.find(params[:id])
     current_user.vote_for(@show)
-    respond_to do |format|
-      format.js
-    end
-  end
 
+  end
 
   private
 
