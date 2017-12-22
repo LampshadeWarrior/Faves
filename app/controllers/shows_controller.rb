@@ -4,7 +4,6 @@ class ShowsController < ApplicationController
   def index
     @shows = Show.all
         # @shows = Show.select(:name).map(&:name).uniq
-
   end
  
   def create
@@ -20,15 +19,17 @@ class ShowsController < ApplicationController
     @show = Show.find(params[:id])
   end
 
-  def vote_for_show
-    @show - Show.find(params[:id])
-    current_user.vote_for(@show)
 
-  end
 
   private
 
   def show_params
     params.require(:show).permit(:title)
+  end
+
+  helper_method :vote_for_show
+  def vote_for_show
+    @show = Show.find(params[:id])
+    current_user.vote_for(@show)
   end
 end
