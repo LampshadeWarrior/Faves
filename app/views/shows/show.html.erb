@@ -1,11 +1,51 @@
 <div class="show_display_box">
+<<<<<<< HEAD
 <h1>Thanks for the submission!</h1>
 <h2>Here are some other people's Faves!</h2><br />
 <h3><%= @show.title %></h3>
+=======
+<div class="show-title">
+  <h1><i><%= @show.title %></i></h1>
+</div>
+>>>>>>> add-reviews
 
-<%= link_to 'Another?', show_path, class: 'btn btn-primary' %>
-<br />
-<br />
+
+<h3>Reviews</h3>
+<% @show.reviews.each do |review| %> 
+  <div class="show_display_box">
+    <%= review.rating %>
+    <%= review.title %>
+    <%= review.body %>
+  </div>
+<% end %>
+
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#reviewModal">
+  Review!
+</button>
 
 <%= link_to 'Back to Home', root_path, class: 'btn btn-info' %>
-</div>
+
+  <div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="reviewModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+            <h4 class="modal-title" id="reviewModalLabel">What do you think about <i><%= @show.title %></i>?</h4>
+          </div>
+          <div class="modal-body">
+            <%= simple_form_for Review.new do |f| %>
+              <%= f.input :rating %>
+              <%= f.input :title %>
+              <%= f.input :body %>
+              <%= f.hidden_field :show_id, value: @show.id %>
+              <%= f.submit 'Submit', class: 'btn btn-success' %>
+            <% end %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>

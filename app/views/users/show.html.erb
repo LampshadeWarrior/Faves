@@ -16,7 +16,7 @@
 
 <% @user.shows.each do |show| %>
   <div class="show_display_box col-10 offset-1">
-      <h1><%= link_to show.name, show_path(show) %></h1>
+      <h1><%= link_to show.title, show_path(show) %></h1>
 
     <% end %>
   </div>
