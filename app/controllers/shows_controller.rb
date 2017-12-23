@@ -5,7 +5,8 @@ class ShowsController < ApplicationController
     @shows = Show.all
         # @shows = Show.select(:name).map(&:name).uniq
   end
- 
+
+
   def create
     @show = current_user.shows.create(show_params)
     if @show.valid?
@@ -16,20 +17,39 @@ class ShowsController < ApplicationController
   end
 
   def show
-    @show = Show.find(params[:id])
+   # byebug
+    @show = Show.find(show_params[:id])
   end
 
+
+  def vote_for_show
+    show = Show.find(show_params[:show_id])
+    current_user.vote_for(@show)
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def vote_against_show
+    show = Show.find(show_params[:id])
+    current_user.vote_against(@show)
+
+    respond_to do |format|
+      format.js
+    end
+  end
 
 
   private
 
   def show_params
-    params.require(:show).permit(:title)
+    params.require(:title).permit(:user_id, :show_id)
   end
 
-  helper_method :vote_for_show
-  def vote_for_show
-    @show = Show.find(params[:id])
-    current_user.vote_for(@show)
+  helper_method :current_show
+  def current_show
+    @current_show ||= Show.find(params[:id])
   end
+
 end

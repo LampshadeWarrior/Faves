@@ -6,7 +6,12 @@ Rails.application.routes.draw do
   devise_for :users
   get 'shows/index'
 
-  resources :shows
+  resources :shows do
+    collection do
+      get :vote_for_show
+      get :vote_against_show
+    end
+  end
 
   root 'static_pages#index'
 
