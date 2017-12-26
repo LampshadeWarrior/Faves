@@ -8,7 +8,7 @@ class ShowsController < ApplicationController
 
 
   def create
-    @show = current_user.shows.create(show_params)
+    @show = current_user.shows.create(params)
     if @show.valid?
       redirect_to root_path
     else
@@ -17,23 +17,23 @@ class ShowsController < ApplicationController
   end
 
   def show
-   # byebug
-    @show = Show.find(show_params[:id])
+    @show = Show.find(params[:id])
   end
 
 
   def vote_for_show
-    show = Show.find(show_params[:show_id])
-    current_user.vote_for(@show)
-
+    # byebug
+    show = Show.find(params[:format])
+    current_user.vote_for(show)
+    
     respond_to do |format|
       format.js
-    end
+   end
   end
 
   def vote_against_show
-    show = Show.find(show_params[:id])
-    current_user.vote_against(@show)
+    show = Show.find(params[:id])
+    current_user.vote_against(show)
 
     respond_to do |format|
       format.js
@@ -43,9 +43,6 @@ class ShowsController < ApplicationController
 
   private
 
-  def show_params
-    params.require(:title).permit(:user_id, :show_id)
-  end
 
   helper_method :current_show
   def current_show
