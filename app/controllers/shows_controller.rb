@@ -1,7 +1,7 @@
 class ShowsController < ApplicationController
   before_action :authenticate_user!
 
-  def index
+  def index 
     @shows = Show.all
         # @shows = Show.select(:name).map(&:name).uniq
   end
