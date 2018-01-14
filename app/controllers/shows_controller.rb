@@ -32,8 +32,16 @@ class ShowsController < ApplicationController
   end
 
   def vote_against_show
-    show = Show.find(params[:id])
+    show = Show.find(params[:format])
     current_user.vote_against(show)
+
+    respond_to do |format|
+      format.js
+    end
+  end
+  def unvote_for_show
+    show = Show.find(params[:format])
+    current_user.unvote_for(show)
 
     respond_to do |format|
       format.js

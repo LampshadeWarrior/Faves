@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     collection do
       get :vote_for_show
       get :vote_against_show
+      get :unvote_for_show
     end
   end
 

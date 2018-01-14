@@ -1,4 +1,13 @@
-<%= @show.id %>
+<script>
+  $(function() {
+    var likeButton = $("#likeButton");
+    var likeButtonVal = likeButton.val();
+    likeButton.click(function() {
+      console.log(likeButtonVal);
+    });
+  });
+</script>
+
 
 <div class="show_display_box">
 <div class="show-title">
@@ -6,13 +15,17 @@
 </div>
 
 <div>
-  <% if current_user.voted_for?(@show) %>
-    <%= link_to 'Unike this show :(', vote_against_show_shows_path(@show.id), :remote => true %> 
+  <% # if current_user.voted_for?(@show) %>
+    <button type="button" class="btn btn-danger" id="likeButton">
+      <%= link_to 'Unike this show :(', unvote_for_show_shows_path(@show.id), :remote => true %>
+    </button>
 
-  <% else %>
+  <% # else %>
+    <button type="button" class="btn btn-success" id="likeButton">
        <%= link_to 'Like this show!', vote_for_show_shows_path(@show.id), :remote => true %>
+    </button>
 
-  <% end %>
+  <% # end %>
 </div>
 
 <h3>Reviews</h3>
