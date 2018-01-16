@@ -1,13 +1,12 @@
-<script>
+<!-- <script>
   $(function() {
     var likeButton = $("#likeButton");
-    var likeButtonVal = likeButton.val();
     likeButton.click(function() {
-      console.log(likeButtonVal);
+      console.log("click");
     });
   });
 </script>
-
+ -->
 
 <div class="show_display_box">
 <div class="show-title">
@@ -17,12 +16,12 @@
 <div>
   <% # if current_user.voted_for?(@show) %>
     <button type="button" class="btn btn-danger" id="likeButton">
-      <%= link_to 'Unike this show :(', unvote_for_show_shows_path(@show.id), :remote => true %>
+      <%= link_to 'Un like this show :(', show_unvote_for_show_path(@show), :method => :post, :remote => :true %>
     </button>
 
   <% # else %>
     <button type="button" class="btn btn-success" id="likeButton">
-       <%= link_to 'Like this show!', vote_for_show_shows_path(@show.id), :remote => true %>
+       <%= link_to 'I Like this show!', show_vote_for_show_path(@show), :method => :post, :remote => :true %>
     </button>
 
   <% # end %>

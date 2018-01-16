@@ -7,11 +7,12 @@ Rails.application.routes.draw do
   get 'shows/index'
 
   resources :shows do
-    collection do
-      get :vote_for_show
-      get :vote_against_show
-      get :unvote_for_show
-    end
+ #   collection do
+      # get :vote_for_show
+      post :vote_for_show
+      # get :unvote_for_show
+      post :unvote_for_show
+ #   end
   end
 
   root 'static_pages#index'

@@ -22,30 +22,37 @@ class ShowsController < ApplicationController
 
 
   def vote_for_show
-    # byebug
-    show = Show.find(params[:format])
+     # byebug
+    show = Show.find(params[:show_id])
     current_user.vote_for(show)
     
-    respond_to do |format|
-      format.js
-   end
+    # respond_to do |format|
+    #   format.js
+    # end
+
+    render json: {
+      status: 200,
+      message: "Successfully voted"
+    }.to_json
+    
+    # render :nothing => true, :status => 200
   end
 
-  def vote_against_show
-    show = Show.find(params[:format])
-    current_user.vote_against(show)
-
-    respond_to do |format|
-      format.js
-    end
-  end
   def unvote_for_show
-    show = Show.find(params[:format])
+    # byebug
+    show = Show.find(params[:show_id])
     current_user.unvote_for(show)
 
-    respond_to do |format|
-      format.js
-    end
+    # respond_to do |format|
+    #   format.js
+#     end
+
+      render json: {
+      status: 200,
+      message: "Successfully unvoted"
+    }.to_json
+    
+    # render :nothing => true, :status => 200
   end
 
 
