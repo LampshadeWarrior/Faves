@@ -1,0 +1,69 @@
+[33m35336f5[m HEAD@{0}: commit: Working toward upvote functionality
+[33m9c4f74a[m HEAD@{1}: commit: Add _path to index code
+[33m7e46af1[m HEAD@{2}: checkout: moving from master to add-voting
+[33m923994e[m HEAD@{3}: checkout: moving from add-voting to master
+[33m7e46af1[m HEAD@{4}: checkout: moving from master to add-voting
+[33m923994e[m HEAD@{5}: checkout: moving from add-voting to master
+[33m7e46af1[m HEAD@{6}: commit: Set up thumbs_up
+[33m90a9eec[m HEAD@{7}: checkout: moving from master to add-voting
+[33m923994e[m HEAD@{8}: checkout: moving from add-voting to master
+[33m90a9eec[m HEAD@{9}: commit: Start implementing Thumbs_up
+[33m923994e[m HEAD@{10}: checkout: moving from master to add-voting
+[33m923994e[m HEAD@{11}: commit: Add vote method in shows controller
+[33m91fee31[m HEAD@{12}: pull: Merge made by the 'recursive' strategy.
+[33mcba6134[m HEAD@{13}: commit: Remove whitespace
+[33m0550a98[m HEAD@{14}: checkout: moving from add-voting to master
+[33m60c2f3a[m HEAD@{15}: commit: Wording change
+[33md0a4597[m HEAD@{16}: checkout: moving from master to add-voting
+[33m0550a98[m HEAD@{17}: checkout: moving from add-reviews to master
+[33m82c16e2[m HEAD@{18}: checkout: moving from master to add-reviews
+[33m0550a98[m HEAD@{19}: pull: Fast-forward
+[33m32b69c6[m HEAD@{20}: commit: Clean up conflict mess
+[33m7b8a140[m HEAD@{21}: checkout: moving from master to master
+[33m7b8a140[m HEAD@{22}: checkout: moving from add-reviews to master
+[33m82c16e2[m HEAD@{23}: checkout: moving from master to add-reviews
+[33m7b8a140[m HEAD@{24}: checkout: moving from master to master
+[33m7b8a140[m HEAD@{25}: checkout: moving from add-reviews to master
+[33m82c16e2[m HEAD@{26}: checkout: moving from master to add-reviews
+[33m7b8a140[m HEAD@{27}: checkout: moving from add-reviews to master
+[33m82c16e2[m HEAD@{28}: checkout: moving from master to add-reviews
+[33m7b8a140[m HEAD@{29}: commit (merge): Add reviews and setup for votes
+[33m0474560[m HEAD@{30}: checkout: moving from add-reviews to master
+[33m82c16e2[m HEAD@{31}: checkout: moving from master to add-reviews
+[33m0474560[m HEAD@{32}: pull: Fast-forward
+[33mc0da55f[m HEAD@{33}: checkout: moving from add-reviews to master
+[33m82c16e2[m HEAD@{34}: commit: Add reviews and baseline for voting
+[33md0a4597[m HEAD@{35}: checkout: moving from add-voting to add-reviews
+[33md0a4597[m HEAD@{36}: checkout: moving from add-reviews to add-voting
+[33md0a4597[m HEAD@{37}: checkout: moving from add-reviews to add-reviews
+[33md0a4597[m HEAD@{38}: commit: Add names and reorganize model
+[33mc0da55f[m HEAD@{39}: checkout: moving from master to add-reviews
+[33mc0da55f[m HEAD@{40}: commit: Add name, location, and age fields to user model
+[33m3c1b6cc[m HEAD@{41}: pull: Fast-forward
+[33m9a23848[m HEAD@{42}: checkout: moving from new-nav-item to master
+[33m8c6bb84[m HEAD@{43}: commit: Add Shows List
+[33m9a23848[m HEAD@{44}: checkout: moving from master to new-nav-item
+[33m9a23848[m HEAD@{45}: pull: Fast-forward
+[33me65417b[m HEAD@{46}: checkout: moving from expand-nav to master
+[33m2e158a0[m HEAD@{47}: commit: Fix navbar
+[33me65417b[m HEAD@{48}: checkout: moving from master to expand-nav
+[33me65417b[m HEAD@{49}: checkout: moving from change-database to master
+[33me65417b[m HEAD@{50}: checkout: moving from master to change-database
+[33me65417b[m HEAD@{51}: checkout: moving from change-database to master
+[33me65417b[m HEAD@{52}: checkout: moving from master to change-database
+[33me65417b[m HEAD@{53}: commit: Removes hey
+[33m518c38d[m HEAD@{54}: pull: Fast-forward
+[33m797c635[m HEAD@{55}: checkout: moving from mybranch to master
+[33mfca4106[m HEAD@{56}: commit: Disable test
+[33m90a001d[m HEAD@{57}: commit: whatever
+[33m797c635[m HEAD@{58}: checkout: moving from master to mybranch
+[33m797c635[m HEAD@{59}: commit: Changed ruby version
+[33m98477e7[m HEAD@{60}: commit: Cleaned up navbar
+[33m434bf6b[m HEAD@{61}: commit: Cleaned up navbar
+[33mbc00d15[m HEAD@{62}: commit: Added navbar, buttons, and Devise
+[33m725f097[m HEAD@{63}: commit: Codeship commit
+[33m2f79ce1[m HEAD@{64}: commit: Put the home page in a stylized div
+[33m2e5ccf7[m HEAD@{65}: commit: Linked the submission modal and added some design
+[33m12b5bb4[m HEAD@{66}: commit: Added a submission form and hooked it up to the database
+[33m537b07b[m HEAD@{67}: commit: Initial commit
+[33ma701b5b[m HEAD@{68}: commit (initial): Initial commit
