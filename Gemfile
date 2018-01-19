@@ -64,7 +64,7 @@ gem 'carrierwave'
 
 gem 'thumbs_up'
 
-
+gem 'font-awesome-rails'
 
 
 
