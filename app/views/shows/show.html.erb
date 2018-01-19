@@ -9,12 +9,18 @@
  -->
 
  <script>
-    $(".voteButton").click(function() {
-      console.log("I like this");
+    $(".voteButton").click(function() {  
+      $.ajax({
+        type: 'POST',
+        url: 'shows/25/vote_for_show',
+        success: function(){
+         alert("I like this");
+        }
+      })
     });
 
     $(".unVoteButton").click(function(){
-      console.log("Fuck this shit");
+      alert("Fuck this shit");
     });
  </script>
 
