@@ -27,24 +27,6 @@
     <button type="button" class="btn btn-danger">Unlike</button>
   </div>
 
-<!-- <div>
-  <% # if current_user.voted_for?(@show) %>
-    <div class="unVoteButton">
-      <%= link_to show_unvote_for_show_path(@show),# :method => :post, :remote => :true do %>
-        <span class="fa fa-thumbs-down"></span>
-        <% # end %>
-    </div>
-
-  <% # else %>
-    <div class="voteButton">
-       <%= link_to show_vote_for_show_path(@show), # :method => :post, :remote => :true do %>
-        <span class="fa fa-thumbs-up"></span>
-      <% # end %>
-    </div>
-
-  <% # end %>
-</div> -->
-
 <h3>Reviews</h3>
 <% @show.reviews.each do |review| %> 
   <div class="show_display_box">
