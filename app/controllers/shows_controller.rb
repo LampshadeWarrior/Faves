@@ -23,6 +23,7 @@ class ShowsController < ApplicationController
 
   def vote_for_show
      # byebug
+
     show = Show.find(params[:show_id])
     current_user.vote_for(show)
     
@@ -32,6 +33,7 @@ class ShowsController < ApplicationController
 
     render json: {
       status: 200,
+      liked: true,
       message: "Successfully voted"
     }.to_json
     
@@ -45,10 +47,11 @@ class ShowsController < ApplicationController
 
     # respond_to do |format|
     #   format.js
-#     end
+#     end    
 
       render json: {
       status: 200,
+      liked: false,
       message: "Successfully unvoted"
     }.to_json
     

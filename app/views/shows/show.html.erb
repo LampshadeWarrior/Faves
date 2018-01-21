@@ -9,18 +9,16 @@
  -->
 
  <script>
-    $(".voteButton").click(function() {  
-      $.ajax({
-        type: 'POST',
-        url: 'shows/25/vote_for_show',
-        success: function(){
-         alert("I like this");
-        }
-      })
+    var liked = false;
+    $(document).ready(function() {
+      $(".voteButton").click(function() {  
+        $(console.log(liked));
+      });
     });
-
-    $(".unVoteButton").click(function(){
-      alert("Fuck this shit");
+    $(document).ready(function() { 
+      $(".unVoteButton").click(function(){
+        $(console.log(liked));
+      });
     });
  </script>
 
@@ -29,13 +27,13 @@
     <h1><i><%= @show.title %></i></h1>
   </div>
 
-  <div class="voteButton">
-    <button type="button" class="btn btn-success">Like</button>
-  </div>
+  <%= link_to show_vote_for_show_path(@show), class: "voteButton", :method => :post, :remote => :true do %>
+    <span class="fa fa-thumbs-up"></span>
+  <% end %>
 
-  <div class="unVoteButton">
-    <button type="button" class="btn btn-danger">Unlike</button>
-  </div>
+  <%= link_to show_unvote_for_show_path(@show), class: "unVoteButton", :method => :post, :remote => :true do %>
+    <span class="fa fa-thumbs-down"></span>
+  <% end %>
 
 <h3>Reviews</h3>
 <% @show.reviews.each do |review| %> 
