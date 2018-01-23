@@ -18,12 +18,13 @@ class ShowsController < ApplicationController
 
   def show
     @show = Show.find(params[:id])
+    @liked = current_user.voted_for?(current_show)
   end
 
 
   def vote_for_show
      # byebug
-
+    puts "I like this"
     show = Show.find(params[:show_id])
     current_user.vote_for(show)
     
@@ -42,6 +43,7 @@ class ShowsController < ApplicationController
 
   def unvote_for_show
     # byebug
+    puts "Not for me"
     show = Show.find(params[:show_id])
     current_user.unvote_for(show)
 

@@ -8,24 +8,16 @@
 </script>
  -->
 
- <script>
-    var liked = false;
-    $(document).ready(function() {
-      $(".voteButton").click(function() {  
-        $(console.log(liked));
-      });
-    });
-    $(document).ready(function() { 
-      $(".unVoteButton").click(function(){
-        $(console.log(liked));
-      });
-    });
- </script>
+
 
 <div class="show_display_box">
   <div class="show-title">
     <h1><i><%= @show.title %></i></h1>
   </div>
+
+  <%= link_to '#', class: "voteButton" do %>
+    <span class="fa fa-thumbs-up"></span>
+  <% end %>
 
   <%= link_to show_vote_for_show_path(@show), class: "voteButton", :method => :post, :remote => :true do %>
     <span class="fa fa-thumbs-up"></span>
@@ -74,3 +66,36 @@
         </div>
       </div>
     </div>
+
+
+ <script>
+  var ready = function() {
+    $(".voteButton").click(function() {  
+      $(console.log("I like this"));
+      // $.post(
+      //     "<%= show_vote_for_show_path(@show) %>", 
+      //     function(){
+      //       console.log("I'm back")
+      //     });
+      $("h1").get(1).innerHTML = "Hello";
+
+    });
+
+    $(".unVoteButton").click(function(){
+      $(console.log("Not a fan"));
+    });
+
+    $(".voteButton").bind("ajax:success",
+                   function(evt, data, status, xhr){
+                        //this assumes the action returns an HTML snippet
+                        // $("div#response_data").html(data);
+                        console.log("success")
+           }).bind("ajax:error", function(evt, data, status, xhr){
+                    //do something with the error here
+                    // $("div#errors p").text(data);
+                    console.log("failure")
+           });
+  }
+    var liked = false;
+    $(document).on('turbolinks:load', ready);
+  </script>
